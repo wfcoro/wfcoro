@@ -1,0 +1,7 @@
+build --cxxopt="-std=c++11"
+#build --cxxopt=-ggdb
+
+build:gcc_config --per_file_copt=workflow//*@-Wno-maybe-uninitialized,-Wno-unused-result
+
+build --compilation_mode=opt # fastbuild dbg opt
+build --strip=never
