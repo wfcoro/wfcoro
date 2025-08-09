@@ -1,0 +1,4 @@
+bazel-*
+localtest
+.clang-format
+Makefile
