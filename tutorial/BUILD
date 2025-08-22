@@ -5,15 +5,15 @@ cc_binary(
 )
 
 cc_binary(
-	name = "http_server",
-	srcs = ["tutorial-01-http_server.cc"],
+	name = "wget",
+	srcs = ["tutorial-01-wget.cc"],
 	deps = ["//:common", "@workflow//:http"],
 )
 
 cc_binary(
-	name = "parallel_sort",
-	srcs = ["tutorial-02-parallel_sort.cc"],
-	deps = ["//:common"],
+	name = "wget_to_redis",
+	srcs = ["tutorial-02-wget_to_redis.cc"],
+	deps = ["//:common", "@workflow//:http", "@workflow//:redis"],
 )
 
 cc_binary(
@@ -31,5 +31,23 @@ cc_binary(
 cc_binary(
 	name = "future_wait",
 	srcs = ["tutorial-05-future_wait.cc"],
+	deps = ["//:common"],
+)
+
+cc_binary(
+	name = "http_server",
+	srcs = ["tutorial-06-http_server.cc"],
+	deps = ["//:common", "@workflow//:http"],
+)
+
+cc_binary(
+	name = "http_proxy",
+	srcs = ["tutorial-07-http_proxy.cc"],
+	deps = ["//:common", "@workflow//:http"],
+)
+
+cc_binary(
+	name = "parallel_sort",
+	srcs = ["tutorial-08-parallel_sort.cc"],
 	deps = ["//:common"],
 )
